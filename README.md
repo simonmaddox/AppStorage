@@ -17,13 +17,8 @@ A drop-in replacement for the iOS 14 `@AppStorage` property wrapper.
 ## Usage
 
 ```swift
-// iOS 14
 @AppStorage("text") var text = "Default Text"
 @AppStorage("magic_number", store: .customUserDefaults) var magicNumber = 42
-
-// iOS 13
-@AppStorageCompat("text") var text = "Default Text"
-@AppStorageCompat("magic_number", store: .customUserDefaults) var magicNumber = 42
 ```
 
 <details><summary>More complete example</summary>
@@ -44,9 +39,9 @@ enum IntEnum: Int, Identifiable {
 }
 
 struct ContentView: View {
-    @AppStorageCompat("text", store: .standard) var text = "Default Text"
-    @AppStorageCompat("string_enum") var selectionString: StringEnum = .a
-    @AppStorageCompat("int_enum") var selectionInt: IntEnum = .this
+    @AppStorage("text", store: .standard) var text = "Default Text"
+    @AppStorage("string_enum") var selectionString: StringEnum = .a
+    @AppStorage("int_enum") var selectionInt: IntEnum = .this
 
     var body: some View {
         List {

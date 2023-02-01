@@ -1,5 +1,11 @@
 import SwiftUI
 
+@available(iOS, deprecated: 14.0, renamed: "SwiftUI.AppStorage")
+@available(macOS, deprecated: 11.0, renamed: "SwiftUI.AppStorage")
+@available(tvOS, deprecated: 14.0, renamed: "SwiftUI.AppStorage")
+@available(watchOS, deprecated: 7.0, renamed: "SwiftUI.AppStorage")
+public typealias AppStorage = AppStorageCompat
+
 /// A property wrapper type that reflects a value from `UserDefaults` and
 /// invalidates a view on a change in value in that user default.
 @frozen @propertyWrapper public struct AppStorageCompat<Value> : DynamicProperty {
